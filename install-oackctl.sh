@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Install ttctl binary for the current platform.
+# Install oackctl binary for the current platform.
 # Installer version: 0.1.0
 #
 # Usage:
-#   curl -sSfL https://raw.githubusercontent.com/greggyNapalm/ttctl/main/install-ttctl.sh | bash
+#   curl -sSfL https://raw.githubusercontent.com/oack-io/oackctl/main/install-oackctl.sh | bash
 #   curl -sSfL ... | bash -s -- --version 1.0.0 --dir /usr/local/bin
 #
 # Options:
 #   --version VERSION   Install a specific version (default: latest)
 #   --dir DIR           Install directory (default: /usr/local/bin)
-#   --repo OWNER/REPO   GitHub repo (default: greggyNapalm/ttctl)
+#   --repo OWNER/REPO   GitHub repo (default: oack-io/oackctl)
 
 INSTALL_DIR="/usr/local/bin"
 VERSION="latest"
-GITHUB_REPO="greggyNapalm/ttctl"
+GITHUB_REPO="oack-io/oackctl"
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -82,7 +82,7 @@ fi
 # Strip leading 'v' for the archive name
 VERSION_NUM="${VERSION#v}"
 
-ARCHIVE="ttctl_${VERSION_NUM}_${OS}_${ARCH}.tar.gz"
+ARCHIVE="oackctl_${VERSION_NUM}_${OS}_${ARCH}.tar.gz"
 URL="https://github.com/${GITHUB_REPO}/releases/download/${VERSION}/${ARCHIVE}"
 
 TMPDIR="$(mktemp -d)"
@@ -94,14 +94,14 @@ curl -sSfL -o "${TMPDIR}/${ARCHIVE}" "$URL"
 echo "Extracting..."
 tar -xzf "${TMPDIR}/${ARCHIVE}" -C "$TMPDIR"
 
-echo "Installing to ${INSTALL_DIR}/ttctl..."
+echo "Installing to ${INSTALL_DIR}/oackctl..."
 if [ -w "$INSTALL_DIR" ]; then
-  mv "${TMPDIR}/ttctl" "${INSTALL_DIR}/ttctl"
+  mv "${TMPDIR}/oackctl" "${INSTALL_DIR}/oackctl"
 else
-  sudo mv "${TMPDIR}/ttctl" "${INSTALL_DIR}/ttctl"
+  sudo mv "${TMPDIR}/oackctl" "${INSTALL_DIR}/oackctl"
 fi
-chmod +x "${INSTALL_DIR}/ttctl"
+chmod +x "${INSTALL_DIR}/oackctl"
 
-echo "ttctl ${VERSION} installed successfully."
+echo "oackctl ${VERSION} installed successfully."
 echo ""
-ttctl version 2>/dev/null || "${INSTALL_DIR}/ttctl" version
+oackctl version 2>/dev/null || "${INSTALL_DIR}/oackctl" version
