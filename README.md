@@ -1,6 +1,15 @@
-# oackctl
+<p align="center">
+  <img src="logo.png" alt="Oack" width="80" />
+</p>
 
-CLI for the [Oack](https://oack.io) uptime monitoring API.
+<h1 align="center">oackctl</h1>
+
+<p align="center">
+  CLI for the <a href="https://oack.io">Oack</a> uptime monitoring platform.<br/>
+  <a href="https://oack.io/docs">Documentation</a> · <a href="https://github.com/oack-io/oackctl/releases">Releases</a> · <a href="https://github.com/oack-io/homebrew-tap">Homebrew Tap</a>
+</p>
+
+---
 
 ## Install
 
@@ -20,7 +29,7 @@ curl -sSfL "https://raw.githubusercontent.com/oack-io/oackctl/refs/heads/main/in
 Install a specific version:
 
 ```bash
-curl -sSfL "https://raw.githubusercontent.com/oack-io/oackctl/refs/heads/main/install-oackctl.sh" | bash -s -- --version 0.3.1
+curl -sSfL "https://raw.githubusercontent.com/oack-io/oackctl/refs/heads/main/install-oackctl.sh" | bash -s -- --version 0.3.2
 ```
 
 Install to a custom directory:
@@ -135,3 +144,11 @@ oackctl teams list --json
 | `--profile` | `TT_PROFILE` | `default` | Config profile name |
 | `--json` | — | `false` | JSON output |
 | `--verbose` | — | `false` | Print HTTP request/response details |
+
+## Documentation
+
+Full platform documentation is available at **[oack.io/docs](https://oack.io/docs)**.
+
+## License
+
+MIT
