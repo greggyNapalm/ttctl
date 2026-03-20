@@ -96,16 +96,6 @@ All require `--team <id>`.
 | `oackctl invites revoke <inviteID> --team <id>` | Revoke invite |
 | `oackctl invites accept <token>` | Accept invite (no --team) |
 
-### Users (admin)
-
-| Command | Description |
-|---------|-------------|
-| `oackctl users list` | List all users |
-| `oackctl users get <id>` | Get user details |
-| `oackctl users create --email <e> --name <n>` | Create user |
-| `oackctl users update <id> [--email <e>] [--name <n>]` | Update user |
-| `oackctl users delete <id>` | Delete user |
-
 ### Monitors
 
 All require `--team <id>`.
@@ -159,9 +149,6 @@ All require `--team <id> --monitor <id>`.
 | `oackctl probes list --team <id> --monitor <id> [flags]` | List probes |
 | `oackctl probes get <probeID> --team <id> --monitor <id>` | Get probe |
 | `oackctl probes details <probeID> --team <id> --monitor <id>` | Full details (geo, trace, CF log, performance) |
-| `oackctl probes create --team <id> --monitor <id> --status <n> [flags]` | Create probe |
-| `oackctl probes update <probeID> --team <id> --monitor <id> [flags]` | Update probe |
-| `oackctl probes delete <probeID> --team <id> --monitor <id>` | Delete probe |
 | `oackctl probes aggregate --team <id> --monitor <id> --from <ts> --to <ts> --step <s> --agg <a>` | Aggregate |
 | `oackctl probes pcap <probeID> --team <id> --monitor <id> [-o file.pcap]` | Download pcap |
 
@@ -259,23 +246,6 @@ All require `--account <id>`. Component/incident/maintenance subcommands also re
 | `oackctl status-pages list-templates --account <id> --page <id>` | List |
 | `oackctl status-pages update-template <tplID> --account <id> --page <id> [flags]` | Update |
 | `oackctl status-pages delete-template <tplID> --account <id> --page <id>` | Delete |
-
-### Checkers
-
-No `--team` flag needed.
-
-| Command | Description |
-|---------|-------------|
-| `oackctl checkers list` | List checkers |
-| `oackctl checkers get <id>` | Get checker details |
-| `oackctl checkers rename <id> --name <n>` | Rename checker |
-| `oackctl checkers delete <id>` | Delete checker |
-| `oackctl checkers assignments <id>` | List monitor assignments |
-| `oackctl checkers set-teams <id> --team-ids <csv>` | Set team associations |
-| `oackctl checkers revoke <id>` | Revoke registration |
-| `oackctl checkers disconnect <id>` | Force disconnect |
-| `oackctl checkers redirect <id> --url <u>` | Set redirect URL |
-| `oackctl checkers clear-redirect <id>` | Clear redirect |
 
 ### Comments
 
@@ -400,17 +370,6 @@ Require `--account <id>`.
 | `oackctl devices register --token <pushToken> --platform <ios\|android>` | Register push device |
 | `oackctl devices list` | List registered devices |
 | `oackctl devices unregister <token>` | Unregister device |
-
-### Admin (super_admin only)
-
-| Command | Description |
-|---------|-------------|
-| `oackctl admin list` | List all accounts |
-| `oackctl admin get <accountID>` | Get account details |
-| `oackctl admin set-plan <accountID> --plan <free\|pro\|business>` | Set plan |
-| `oackctl admin set-status <accountID> --status <active\|expired\|cancelled>` | Set status |
-| `oackctl admin force-delete <accountID>` | Force-delete account |
-| `oackctl admin audit-log <accountID>` | View audit log |
 
 ### Preferences
 
